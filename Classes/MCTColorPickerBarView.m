@@ -24,6 +24,8 @@
 
 @interface MCTColorPickerBarView ()
 
+@property (nonatomic) CGPoint selectedPoint;
+
 @end
 
 @implementation MCTColorPickerBarView
@@ -52,6 +54,8 @@
 - (void)mct_setupView {
     [self.barLayer setNeedsDisplay];
     
+    self.selectedPoint = CGPointZero;
+    
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(mct_gestureRecognizerDidRecognize:)];
     longPress.minimumPressDuration = 0.01;
     [self addGestureRecognizer:longPress];
@@ -69,10 +73,36 @@
 }
 
 #pragma mark -
-#pragma mark - Gesture
-- (void)mct_gestureRecognizerDidRecognize:(UILongPressGestureRecognizer *)longPress {
+#pragma mark - Point View
+- (void)setPointView:(UIView<MCTColorPickerPointView> *)pointView {
+    if (_pointView) {
+        [_pointView removeFromSuperview];
+        _pointView = nil;
+    }
+    _pointView = pointView;
+    
+    if (_pointView) {
+        [self addSubview:_pointView];
+        [_pointView moveToPoint:self.selectedPoint];
+    }
+}
+
+#pragma mark -
+#pragma mark - Layout
+- (void)layoutSubviews {
+    [self.pointView moveToPoint:self.selectedPoint];
+    [super layoutSubviews];
+}
+
+#pragma mark -
+#pragma mark - Point
+- (void)setSelectedPoint:(CGPoint)selectedPoint {
+    _selectedPoint = selectedPoint;
+    
+    [self.pointView moveToPoint:selectedPoint];
+    
     if (self.changeHandler) {
-        CGColorRef cgColor = MCTCreateColorForHSV([self.barLayer hsvForPoint:[longPress locationInView:self]]);
+        CGColorRef cgColor = MCTCreateColorForHSV([self.barLayer hsvForPoint:selectedPoint]);
         
         if (cgColor) {
             UIColor *color = [UIColor colorWithCGColor:cgColor];
@@ -84,6 +114,12 @@
             }
         }
     }
+}
+
+#pragma mark -
+#pragma mark - Gesture
+- (void)mct_gestureRecognizerDidRecognize:(UILongPressGestureRecognizer *)longPress {
+    self.selectedPoint = [longPress locationInView:self];
 }
 
 @end

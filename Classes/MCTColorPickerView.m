@@ -100,9 +100,31 @@ static void *MCTColorPickerViewColorChangeContext = &MCTColorPickerViewColorChan
 }
 - (void)setSelectedPoint:(CGPoint)selectedPoint {
     _selectedPoint = selectedPoint;
+    [self.pointView moveToPoint:self.selectedPoint];
     [self mct_updateFromPoint];
 }
 
+#pragma mark -
+#pragma mark - Point View
+- (void)setPointView:(UIView<MCTColorPickerPointView> *)pointView {
+    if (_pointView) {
+        [_pointView removeFromSuperview];
+        _pointView = nil;
+    }
+    _pointView = pointView;
+    
+    if (_pointView) {
+        [self addSubview:_pointView];
+        [_pointView moveToPoint:self.selectedPoint];
+    }
+}
+
+#pragma mark -
+#pragma mark - Layout
+- (void)layoutSubviews {
+    [self.pointView moveToPoint:self.selectedPoint];
+    [super layoutSubviews];
+}
 
 #pragma mark -
 #pragma mark - KVO

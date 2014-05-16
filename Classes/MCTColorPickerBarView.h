@@ -37,6 +37,8 @@ typedef void (^MCTColorPickerBarChangeHandler)(MCTColorPickerBarView *, UIColor 
 
 @property (nonatomic, copy) MCTColorPickerBarChangeHandler changeHandler;
 
+@property (nonatomic, strong) UIView<MCTColorPickerPointView> *pointView;
+
 @end
 
 #endif

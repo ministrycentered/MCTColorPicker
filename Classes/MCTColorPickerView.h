@@ -42,6 +42,8 @@ typedef void (^MCTColorPickerChangeHandler)(MCTColorPickerView *, UIColor *color
 
 - (void)updateColors;
 
+@property (nonatomic, strong) UIView<MCTColorPickerPointView> *pointView;
+
 @end
 
 #endif

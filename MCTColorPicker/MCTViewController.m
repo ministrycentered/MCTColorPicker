@@ -14,8 +14,15 @@
 
 @implementation MCTViewController
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)loadView {
+    [super loadView];
+    
+    self.pickerView.pointView = [[MCTPointView alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
+    self.pickerView.pointView.backgroundColor = [UIColor orangeColor];
+    
+    self.barView.pointView = [[MCTPointView alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
+    [((MCTPointView *)self.barView.pointView) setFixY:YES];
+    self.barView.pointView.backgroundColor = [UIColor orangeColor];
     
     self.pickerView.color = [UIColor redColor];
     
@@ -27,6 +34,21 @@
     };
     
     [self.pickerView updateColors];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+@end
+
+@implementation MCTPointView
+
+- (void)moveToPoint:(CGPoint)point {
+    if (self.fixY) {
+        point.y = CGRectGetHeight(self.superview.bounds) / 2.0;
+    }
+    self.center = point;
 }
 
 @end

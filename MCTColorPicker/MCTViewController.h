@@ -19,3 +19,9 @@
 @property (nonatomic, weak) IBOutlet UIView *colorView;
 
 @end
+
+@interface MCTPointView : UIView <MCTColorPickerPointView>
+
+@property (nonatomic) BOOL fixY;
+
+@end
