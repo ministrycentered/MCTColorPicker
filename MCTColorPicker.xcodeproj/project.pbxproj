@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9427658519266AAB0029315C /* MCTColorPickerBarLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9427658419266AAB0029315C /* MCTColorPickerBarLayer.m */; };
+		9427658819266B600029315C /* MCTColorPickerBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9427658719266B600029315C /* MCTColorPickerBarView.m */; };
+		948D6D26192572E200C11774 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948D6D25192572E200C11774 /* Foundation.framework */; };
+		948D6D28192572E200C11774 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948D6D27192572E200C11774 /* CoreGraphics.framework */; };
+		948D6D2A192572E200C11774 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948D6D29192572E200C11774 /* UIKit.framework */; };
+		948D6D30192572E200C11774 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 948D6D2E192572E200C11774 /* InfoPlist.strings */; };
+		948D6D32192572E200C11774 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 948D6D31192572E200C11774 /* main.m */; };
+		948D6D36192572E200C11774 /* MCTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 948D6D35192572E200C11774 /* MCTAppDelegate.m */; };
+		948D6D39192572E200C11774 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948D6D37192572E200C11774 /* Main.storyboard */; };
+		948D6D3C192572E200C11774 /* MCTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 948D6D3B192572E200C11774 /* MCTViewController.m */; };
+		948D6D3E192572E200C11774 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 948D6D3D192572E200C11774 /* Images.xcassets */; };
+		948D6D45192572E200C11774 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948D6D44192572E200C11774 /* XCTest.framework */; };
+		948D6D46192572E200C11774 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948D6D25192572E200C11774 /* Foundation.framework */; };
+		948D6D47192572E200C11774 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948D6D29192572E200C11774 /* UIKit.framework */; };
+		948D6D4F192572E200C11774 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 948D6D4D192572E200C11774 /* InfoPlist.strings */; };
+		948D6D51192572E200C11774 /* MCTColorPickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 948D6D50192572E200C11774 /* MCTColorPickerTests.m */; };
+		948D6D611925739400C11774 /* MCTColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 948D6D601925739400C11774 /* MCTColorPickerView.m */; };
+		948D6D64192573E100C11774 /* MCTColorPickerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 948D6D63192573E100C11774 /* MCTColorPickerLayer.m */; };
+		948D6D6719257C0100C11774 /* MCTColorPickerHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 948D6D6619257C0100C11774 /* MCTColorPickerHelpers.m */; };
+		948D6D691925845E00C11774 /* ColorPickerHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 948D6D681925845E00C11774 /* ColorPickerHelperTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		948D6D48192572E200C11774 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 948D6D1A192572E200C11774 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 948D6D21192572E200C11774;
+			remoteInfo = MCTColorPicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9427658319266AAB0029315C /* MCTColorPickerBarLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTColorPickerBarLayer.h; sourceTree = "<group>"; };
+		9427658419266AAB0029315C /* MCTColorPickerBarLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTColorPickerBarLayer.m; sourceTree = "<group>"; };
+		9427658619266B600029315C /* MCTColorPickerBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTColorPickerBarView.h; sourceTree = "<group>"; };
+		9427658719266B600029315C /* MCTColorPickerBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTColorPickerBarView.m; sourceTree = "<group>"; };
+		948D6D22192572E200C11774 /* MCTColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCTColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		948D6D25192572E200C11774 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		948D6D27192572E200C11774 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		948D6D29192572E200C11774 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		948D6D2D192572E200C11774 /* MCTColorPicker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MCTColorPicker-Info.plist"; sourceTree = "<group>"; };
+		948D6D2F192572E200C11774 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		948D6D31192572E200C11774 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		948D6D33192572E200C11774 /* MCTColorPicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MCTColorPicker-Prefix.pch"; sourceTree = "<group>"; };
+		948D6D34192572E200C11774 /* MCTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTAppDelegate.h; sourceTree = "<group>"; };
+		948D6D35192572E200C11774 /* MCTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTAppDelegate.m; sourceTree = "<group>"; };
+		948D6D38192572E200C11774 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		948D6D3A192572E200C11774 /* MCTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTViewController.h; sourceTree = "<group>"; };
+		948D6D3B192572E200C11774 /* MCTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTViewController.m; sourceTree = "<group>"; };
+		948D6D3D192572E200C11774 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		948D6D43192572E200C11774 /* MCTColorPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCTColorPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		948D6D44192572E200C11774 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		948D6D4C192572E200C11774 /* MCTColorPickerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MCTColorPickerTests-Info.plist"; sourceTree = "<group>"; };
+		948D6D4E192572E200C11774 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		948D6D50192572E200C11774 /* MCTColorPickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTColorPickerTests.m; sourceTree = "<group>"; };
+		948D6D5F1925739400C11774 /* MCTColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTColorPickerView.h; sourceTree = "<group>"; };
+		948D6D601925739400C11774 /* MCTColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTColorPickerView.m; sourceTree = "<group>"; };
+		948D6D62192573E100C11774 /* MCTColorPickerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTColorPickerLayer.h; sourceTree = "<group>"; };
+		948D6D63192573E100C11774 /* MCTColorPickerLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTColorPickerLayer.m; sourceTree = "<group>"; };
+		948D6D6519257C0100C11774 /* MCTColorPickerHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTColorPickerHelpers.h; sourceTree = "<group>"; };
+		948D6D6619257C0100C11774 /* MCTColorPickerHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTColorPickerHelpers.m; sourceTree = "<group>"; };
+		948D6D681925845E00C11774 /* ColorPickerHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerHelperTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		948D6D1F192572E200C11774 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948D6D28192572E200C11774 /* CoreGraphics.framework in Frameworks */,
+				948D6D2A192572E200C11774 /* UIKit.framework in Frameworks */,
+				948D6D26192572E200C11774 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		948D6D40192572E200C11774 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948D6D45192572E200C11774 /* XCTest.framework in Frameworks */,
+				948D6D47192572E200C11774 /* UIKit.framework in Frameworks */,
+				948D6D46192572E200C11774 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		948D6D19192572E200C11774 = {
+			isa = PBXGroup;
+			children = (
+				948D6D2B192572E200C11774 /* MCTColorPicker */,
+				948D6D4A192572E200C11774 /* MCTColorPickerTests */,
+				948D6D24192572E200C11774 /* Frameworks */,
+				948D6D23192572E200C11774 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		948D6D23192572E200C11774 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				948D6D22192572E200C11774 /* MCTColorPicker.app */,
+				948D6D43192572E200C11774 /* MCTColorPickerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		948D6D24192572E200C11774 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				948D6D25192572E200C11774 /* Foundation.framework */,
+				948D6D27192572E200C11774 /* CoreGraphics.framework */,
+				948D6D29192572E200C11774 /* UIKit.framework */,
+				948D6D44192572E200C11774 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		948D6D2B192572E200C11774 /* MCTColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				948D6D5E1925738800C11774 /* Classes */,
+				948D6D34192572E200C11774 /* MCTAppDelegate.h */,
+				948D6D35192572E200C11774 /* MCTAppDelegate.m */,
+				948D6D37192572E200C11774 /* Main.storyboard */,
+				948D6D3A192572E200C11774 /* MCTViewController.h */,
+				948D6D3B192572E200C11774 /* MCTViewController.m */,
+				948D6D3D192572E200C11774 /* Images.xcassets */,
+				948D6D2C192572E200C11774 /* Supporting Files */,
+			);
+			path = MCTColorPicker;
+			sourceTree = "<group>";
+		};
+		948D6D2C192572E200C11774 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				948D6D2D192572E200C11774 /* MCTColorPicker-Info.plist */,
+				948D6D2E192572E200C11774 /* InfoPlist.strings */,
+				948D6D31192572E200C11774 /* main.m */,
+				948D6D33192572E200C11774 /* MCTColorPicker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		948D6D4A192572E200C11774 /* MCTColorPickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				948D6D50192572E200C11774 /* MCTColorPickerTests.m */,
+				948D6D681925845E00C11774 /* ColorPickerHelperTests.m */,
+				948D6D4B192572E200C11774 /* Supporting Files */,
+			);
+			path = MCTColorPickerTests;
+			sourceTree = "<group>";
+		};
+		948D6D4B192572E200C11774 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				948D6D4C192572E200C11774 /* MCTColorPickerTests-Info.plist */,
+				948D6D4D192572E200C11774 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		948D6D5E1925738800C11774 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				948D6D5F1925739400C11774 /* MCTColorPickerView.h */,
+				948D6D601925739400C11774 /* MCTColorPickerView.m */,
+				948D6D62192573E100C11774 /* MCTColorPickerLayer.h */,
+				948D6D63192573E100C11774 /* MCTColorPickerLayer.m */,
+				9427658619266B600029315C /* MCTColorPickerBarView.h */,
+				9427658719266B600029315C /* MCTColorPickerBarView.m */,
+				9427658319266AAB0029315C /* MCTColorPickerBarLayer.h */,
+				9427658419266AAB0029315C /* MCTColorPickerBarLayer.m */,
+				948D6D6519257C0100C11774 /* MCTColorPickerHelpers.h */,
+				948D6D6619257C0100C11774 /* MCTColorPickerHelpers.m */,
+			);
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		948D6D21192572E200C11774 /* MCTColorPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 948D6D54192572E200C11774 /* Build configuration list for PBXNativeTarget "MCTColorPicker" */;
+			buildPhases = (
+				948D6D1E192572E200C11774 /* Sources */,
+				948D6D1F192572E200C11774 /* Frameworks */,
+				948D6D20192572E200C11774 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MCTColorPicker;
+			productName = MCTColorPicker;
+			productReference = 948D6D22192572E200C11774 /* MCTColorPicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		948D6D42192572E200C11774 /* MCTColorPickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 948D6D57192572E200C11774 /* Build configuration list for PBXNativeTarget "MCTColorPickerTests" */;
+			buildPhases = (
+				948D6D3F192572E200C11774 /* Sources */,
+				948D6D40192572E200C11774 /* Frameworks */,
+				948D6D41192572E200C11774 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				948D6D49192572E200C11774 /* PBXTargetDependency */,
+			);
+			name = MCTColorPickerTests;
+			productName = MCTColorPickerTests;
+			productReference = 948D6D43192572E200C11774 /* MCTColorPickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		948D6D1A192572E200C11774 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MCT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Ministry Centered Technology";
+				TargetAttributes = {
+					948D6D42192572E200C11774 = {
+						TestTargetID = 948D6D21192572E200C11774;
+					};
+				};
+			};
+			buildConfigurationList = 948D6D1D192572E200C11774 /* Build configuration list for PBXProject "MCTColorPicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 948D6D19192572E200C11774;
+			productRefGroup = 948D6D23192572E200C11774 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				948D6D21192572E200C11774 /* MCTColorPicker */,
+				948D6D42192572E200C11774 /* MCTColorPickerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		948D6D20192572E200C11774 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948D6D3E192572E200C11774 /* Images.xcassets in Resources */,
+				948D6D30192572E200C11774 /* InfoPlist.strings in Resources */,
+				948D6D39192572E200C11774 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		948D6D41192572E200C11774 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948D6D4F192572E200C11774 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		948D6D1E192572E200C11774 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948D6D32192572E200C11774 /* main.m in Sources */,
+				948D6D64192573E100C11774 /* MCTColorPickerLayer.m in Sources */,
+				948D6D6719257C0100C11774 /* MCTColorPickerHelpers.m in Sources */,
+				9427658819266B600029315C /* MCTColorPickerBarView.m in Sources */,
+				9427658519266AAB0029315C /* MCTColorPickerBarLayer.m in Sources */,
+				948D6D3C192572E200C11774 /* MCTViewController.m in Sources */,
+				948D6D36192572E200C11774 /* MCTAppDelegate.m in Sources */,
+				948D6D611925739400C11774 /* MCTColorPickerView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		948D6D3F192572E200C11774 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948D6D51192572E200C11774 /* MCTColorPickerTests.m in Sources */,
+				948D6D691925845E00C11774 /* ColorPickerHelperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		948D6D49192572E200C11774 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 948D6D21192572E200C11774 /* MCTColorPicker */;
+			targetProxy = 948D6D48192572E200C11774 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		948D6D2E192572E200C11774 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				948D6D2F192572E200C11774 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		948D6D37192572E200C11774 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				948D6D38192572E200C11774 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		948D6D4D192572E200C11774 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				948D6D4E192572E200C11774 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		948D6D52192572E200C11774 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		948D6D53192572E200C11774 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		948D6D55192572E200C11774 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTColorPicker/MCTColorPicker-Prefix.pch";
+				INFOPLIST_FILE = "MCTColorPicker/MCTColorPicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		948D6D56192572E200C11774 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTColorPicker/MCTColorPicker-Prefix.pch";
+				INFOPLIST_FILE = "MCTColorPicker/MCTColorPicker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		948D6D58192572E200C11774 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MCTColorPicker.app/MCTColorPicker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTColorPicker/MCTColorPicker-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MCTColorPickerTests/MCTColorPickerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		948D6D59192572E200C11774 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MCTColorPicker.app/MCTColorPicker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MCTColorPicker/MCTColorPicker-Prefix.pch";
+				INFOPLIST_FILE = "MCTColorPickerTests/MCTColorPickerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		948D6D1D192572E200C11774 /* Build configuration list for PBXProject "MCTColorPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				948D6D52192572E200C11774 /* Debug */,
+				948D6D53192572E200C11774 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		948D6D54192572E200C11774 /* Build configuration list for PBXNativeTarget "MCTColorPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				948D6D55192572E200C11774 /* Debug */,
+				948D6D56192572E200C11774 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		948D6D57192572E200C11774 /* Build configuration list for PBXNativeTarget "MCTColorPickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				948D6D58192572E200C11774 /* Debug */,
+				948D6D59192572E200C11774 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 948D6D1A192572E200C11774 /* Project object */;
+}
