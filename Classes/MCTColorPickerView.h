@@ -47,6 +47,8 @@ typedef void (^MCTColorPickerInteractionChangeHandler)(MCTColorPickerView *, BOO
 
 @property (nonatomic, copy) MCTColorPickerInteractionChangeHandler inputChangeHandler;
 
+- (void)selectSaturation:(CGFloat)saturation value:(CGFloat)value;
+
 @end
 
 #endif

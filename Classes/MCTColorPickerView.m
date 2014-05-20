@@ -133,6 +133,11 @@ static CGFloat const MCTSelectedPointDefault = -MAXFLOAT;
     return point;
 }
 
+- (void)selectSaturation:(CGFloat)saturation value:(CGFloat)value {
+    [self layoutIfNeeded];
+    self.selectedPoint = [self.pickerLayer pointForHSV:(MCTHSV){1.0,saturation,value}];
+}
+
 #pragma mark -
 #pragma mark - Point View
 - (void)setPointView:(UIView<MCTColorPickerPointView> *)pointView {

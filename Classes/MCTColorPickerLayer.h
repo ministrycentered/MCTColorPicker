@@ -53,6 +53,15 @@
  */
 - (MCTHSV)hsvForPoint:(CGPoint)point;
 
+/**
+ *  Get the point for the passed hsv
+ *
+ *  @param hsv The hsv to get the point for.  The HUE is ignored
+ *
+ *  @return The point for the HSV
+ */
+- (CGPoint)pointForHSV:(MCTHSV)hsv;
+
 @end
 
 #endif

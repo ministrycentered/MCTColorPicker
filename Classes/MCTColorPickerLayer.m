@@ -83,6 +83,11 @@
     
     return hsv;
 }
+- (CGPoint)pointForHSV:(MCTHSV)hsv {
+    CGFloat x = CGRectGetWidth(self.bounds) * hsv.s;
+    CGFloat y = CGRectGetHeight(self.bounds) - (CGRectGetHeight(self.bounds) * hsv.v);
+    return (CGPoint){floorf(x),floorf(y)};
+}
 
 #pragma mark -
 #pragma mark - Mem
