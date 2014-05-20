@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "MCTColorPickerBarView.h"
+#import "MCTColorPickerSubclassingHooks.h"
 
 @interface MCTColorPickerBarView ()
 
@@ -101,6 +102,8 @@
 #pragma mark -
 #pragma mark - Point
 - (void)setSelectedPoint:(CGPoint)selectedPoint {
+    selectedPoint = [self normalizeSelectedPoint:selectedPoint];
+    
     _selectedPoint = selectedPoint;
     
     [self.pointView moveToPoint:selectedPoint];
@@ -118,6 +121,11 @@
             }
         }
     }
+}
+- (CGPoint)normalizeSelectedPoint:(CGPoint)point {
+    point.x = MIN(CGRectGetWidth(self.bounds), MAX(0.0, point.x));
+    point.y = MIN(CGRectGetHeight(self.bounds), MAX(0.0, point.y));
+    return point;
 }
 
 #pragma mark -

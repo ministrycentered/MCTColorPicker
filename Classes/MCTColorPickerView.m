@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "MCTColorPickerView.h"
+#import "MCTColorPickerSubclassingHooks.h"
 
 static void *MCTColorPickerViewColorChangeContext = &MCTColorPickerViewColorChangeContext;
 
@@ -103,9 +104,15 @@ static void *MCTColorPickerViewColorChangeContext = &MCTColorPickerViewColorChan
     }
 }
 - (void)setSelectedPoint:(CGPoint)selectedPoint {
+    selectedPoint = [self normalizeSelectedPoint:selectedPoint];
     _selectedPoint = selectedPoint;
     [self.pointView moveToPoint:self.selectedPoint];
     [self mct_updateFromPoint];
+}
+- (CGPoint)normalizeSelectedPoint:(CGPoint)point {
+    point.x = MIN(CGRectGetWidth(self.bounds), MAX(0.0, point.x));
+    point.y = MIN(CGRectGetHeight(self.bounds), MAX(0.0, point.y));
+    return point;
 }
 
 #pragma mark -

@@ -70,6 +70,7 @@
 		948D6D6519257C0100C11774 /* MCTColorPickerHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTColorPickerHelpers.h; sourceTree = "<group>"; };
 		948D6D6619257C0100C11774 /* MCTColorPickerHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTColorPickerHelpers.m; sourceTree = "<group>"; };
 		948D6D681925845E00C11774 /* ColorPickerHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerHelperTests.m; sourceTree = "<group>"; };
+		94C0ACDC192BCB0D00008120 /* MCTColorPickerSubclassingHooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTColorPickerSubclassingHooks.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +185,7 @@
 				9427658419266AAB0029315C /* MCTColorPickerBarLayer.m */,
 				948D6D6519257C0100C11774 /* MCTColorPickerHelpers.h */,
 				948D6D6619257C0100C11774 /* MCTColorPickerHelpers.m */,
+				94C0ACDC192BCB0D00008120 /* MCTColorPickerSubclassingHooks.h */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
