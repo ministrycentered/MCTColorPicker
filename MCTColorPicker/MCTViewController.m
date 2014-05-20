@@ -17,6 +17,10 @@
 - (void)loadView {
     [super loadView];
     
+    self.pickerView.changeHandler = ^(MCTColorPickerView *view, UIColor *color) {
+        self.colorView.backgroundColor = color;
+    };
+    
     self.pickerView.pointView = [[MCTPointView alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
     self.pickerView.pointView.backgroundColor = [UIColor orangeColor];
     
@@ -25,15 +29,6 @@
     self.barView.pointView.backgroundColor = [UIColor orangeColor];
     
     self.pickerView.color = [UIColor redColor];
-    
-    self.barView.changeHandler = ^(MCTColorPickerBarView *view, UIColor *color) {
-        self.pickerView.color = color;
-    };
-    self.pickerView.changeHandler = ^(MCTColorPickerView *view, UIColor *color) {
-        self.colorView.backgroundColor = color;
-    };
-    
-    [self.pickerView updateColors];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
