@@ -20,6 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+/* 
+ * using the method presented here http://www.cs.rit.edu/~ncs/color/t_convert.html#RGB%20to%20HSV%20&%20HSV%20to%20RGB for conversions
+ */
+
 #import "MCTColorPickerHelpers.h"
 
 #define MCT_RGB_MAX_I 255
