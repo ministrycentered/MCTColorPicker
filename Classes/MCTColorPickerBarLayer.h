@@ -27,8 +27,18 @@
 
 #import "MCTColorPickerHelpers.h"
 
+/**
+ *  Layer for displaying a hue picker.
+ */
 @interface MCTColorPickerBarLayer : CALayer
 
+/**
+ *  Get the HSV for the passed point
+ *
+ *  @param point The point in the bounds of the layer to get the HSV for
+ *
+ *  @return The HSV for the point.  The saturation and value will always be 1.0
+ */
 - (MCTHSV)hsvForPoint:(CGPoint)point;
 
 @end
