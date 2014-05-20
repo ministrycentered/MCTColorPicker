@@ -25,6 +25,8 @@
 
 static void *MCTColorPickerViewColorChangeContext = &MCTColorPickerViewColorChangeContext;
 
+static CGFloat const MCTSelectedPointDefault = -MAXFLOAT;
+
 @interface MCTColorPickerView ()
 
 @property (nonatomic, strong, readwrite) UIColor *selectedColor;
@@ -33,6 +35,7 @@ static void *MCTColorPickerViewColorChangeContext = &MCTColorPickerViewColorChan
 @end
 
 @implementation MCTColorPickerView
+@synthesize selectedPoint = _selectedPoint;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -64,7 +67,7 @@ static void *MCTColorPickerViewColorChangeContext = &MCTColorPickerViewColorChan
     longPress.minimumPressDuration = 0.01;
     [self addGestureRecognizer:longPress];
     
-    self.selectedPoint = CGPointMake(CGRectGetWidth(self.bounds), 0.0);
+    self.selectedPoint = CGPointMake(MCTSelectedPointDefault, MCTSelectedPointDefault);
 }
 
 + (Class)layerClass {
@@ -109,9 +112,24 @@ static void *MCTColorPickerViewColorChangeContext = &MCTColorPickerViewColorChan
     [self.pointView moveToPoint:self.selectedPoint];
     [self mct_updateFromPoint];
 }
+- (CGPoint)selectedPoint {
+    CGPoint point = _selectedPoint;
+    if (point.x == MCTSelectedPointDefault) {
+        point.x = CGRectGetWidth(self.bounds);
+    }
+    if (point.y == MCTSelectedPointDefault) {
+        point.y = 0.0;
+    }
+    return point;
+}
 - (CGPoint)normalizeSelectedPoint:(CGPoint)point {
-    point.x = MIN(CGRectGetWidth(self.bounds), MAX(0.0, point.x));
-    point.y = MIN(CGRectGetHeight(self.bounds), MAX(0.0, point.y));
+    if (point.x != MCTSelectedPointDefault) {
+        point.x = MIN(CGRectGetWidth(self.bounds), MAX(0.0, point.x));
+    }
+    if (point.y != MCTSelectedPointDefault) {
+        point.y = MIN(CGRectGetHeight(self.bounds), MAX(0.0, point.y));
+    }
+    
     return point;
 }
 
