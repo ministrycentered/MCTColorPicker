@@ -28,10 +28,13 @@
 #import "MCTColorPickerBarLayer.h"
 
 @class MCTColorPickerBarView;
+@class MCTColorPickerView;
 
 typedef void (^MCTColorPickerBarChangeHandler)(MCTColorPickerBarView *, UIColor *color);
 
 @interface MCTColorPickerBarView : UIView
+
+@property (nonatomic, weak) MCTColorPickerView *pickerView;
 
 @property (nonatomic, strong, readonly) MCTColorPickerBarLayer *barLayer;
 

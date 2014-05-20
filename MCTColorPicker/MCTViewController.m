@@ -17,6 +17,7 @@
 - (void)loadView {
     [super loadView];
     
+    self.barView.pickerView = self.pickerView;
     self.pickerView.changeHandler = ^(MCTColorPickerView *view, UIColor *color) {
         self.colorView.backgroundColor = color;
     };

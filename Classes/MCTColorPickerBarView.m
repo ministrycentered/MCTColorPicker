@@ -107,19 +107,22 @@
     
     [self.pointView moveToPoint:selectedPoint];
     
-    if (self.changeHandler) {
-        CGColorRef cgColor = MCTCreateColorForHSV([self.barLayer hsvForPoint:selectedPoint]);
+    CGColorRef cgColor = MCTCreateColorForHSV([self.barLayer hsvForPoint:selectedPoint]);
+    
+    if (cgColor) {
+        UIColor *color = [UIColor colorWithCGColor:cgColor];
+        CGColorRelease(cgColor);
         
-        if (cgColor) {
-            UIColor *color = [UIColor colorWithCGColor:cgColor];
-            CGColorRelease(cgColor);
-            
-            if (color) {
+        if (color) {
+            self.pickerView.color = color;
+            if (self.changeHandler) {
                 typeof(self) __weak welf = self;
                 self.changeHandler(welf, color);
             }
         }
     }
+    
+   
 }
 - (CGPoint)normalizeSelectedPoint:(CGPoint)point {
     point.x = MIN(CGRectGetWidth(self.bounds), MAX(0.0, point.x));
