@@ -31,6 +31,7 @@
 @class MCTColorPickerView;
 
 typedef void (^MCTColorPickerBarChangeHandler)(MCTColorPickerBarView *, UIColor *color);
+typedef void (^MCTColorPickerBarInteractionChangeHandler)(MCTColorPickerBarView *, BOOL isInteracting);
 
 @interface MCTColorPickerBarView : UIView
 
@@ -43,6 +44,8 @@ typedef void (^MCTColorPickerBarChangeHandler)(MCTColorPickerBarView *, UIColor 
 @property (nonatomic, strong) UIView<MCTColorPickerPointView> *pointView;
 
 - (void)setHue:(CGFloat)hue;
+
+@property (nonatomic, copy) MCTColorPickerBarInteractionChangeHandler inputChangeHandler;
 
 @end
 

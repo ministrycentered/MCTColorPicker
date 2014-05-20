@@ -137,6 +137,15 @@
 #pragma mark -
 #pragma mark - Gesture
 - (void)mct_gestureRecognizerDidRecognize:(UILongPressGestureRecognizer *)longPress {
+    if (self.inputChangeHandler) {
+        typeof(self) __weak welf = self;
+        if (longPress.state == UIGestureRecognizerStateBegan) {
+            self.inputChangeHandler(welf, YES);
+        }
+        if (longPress.state == UIGestureRecognizerStateEnded || longPress.state == UIGestureRecognizerStateCancelled) {
+            self.inputChangeHandler(welf, NO);
+        }
+    }
     self.selectedPoint = [longPress locationInView:self];
 }
 

@@ -30,6 +30,7 @@
 @class MCTColorPickerView;
 
 typedef void (^MCTColorPickerChangeHandler)(MCTColorPickerView *, UIColor *color);
+typedef void (^MCTColorPickerInteractionChangeHandler)(MCTColorPickerView *, BOOL isInteracting);
 
 @interface MCTColorPickerView : UIView
 
@@ -43,6 +44,8 @@ typedef void (^MCTColorPickerChangeHandler)(MCTColorPickerView *, UIColor *color
 - (void)updateColors;
 
 @property (nonatomic, strong) UIView<MCTColorPickerPointView> *pointView;
+
+@property (nonatomic, copy) MCTColorPickerInteractionChangeHandler inputChangeHandler;
 
 @end
 
