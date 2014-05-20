@@ -76,6 +76,10 @@
     return nil;
 }
 
+- (void)setHue:(CGFloat)hue {
+    self.selectedPoint = CGPointMake(CGRectGetWidth(self.bounds) * hue, self.selectedPoint.y);
+}
+
 #pragma mark -
 #pragma mark - Point View
 - (void)setPointView:(UIView<MCTColorPickerPointView> *)pointView {

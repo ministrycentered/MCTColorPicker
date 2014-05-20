@@ -42,6 +42,8 @@ typedef void (^MCTColorPickerBarChangeHandler)(MCTColorPickerBarView *, UIColor 
 
 @property (nonatomic, strong) UIView<MCTColorPickerPointView> *pointView;
 
+- (void)setHue:(CGFloat)hue;
+
 @end
 
 #endif

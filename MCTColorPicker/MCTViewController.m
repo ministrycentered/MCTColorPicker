@@ -28,8 +28,12 @@
     self.barView.pointView = [[MCTPointView alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
     [((MCTPointView *)self.barView.pointView) setFixY:YES];
     self.barView.pointView.backgroundColor = [UIColor orangeColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
-    self.pickerView.color = [UIColor redColor];
+    [self.barView setHue:0.67];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
