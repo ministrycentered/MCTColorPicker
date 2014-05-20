@@ -21,7 +21,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="260" id="gk3-8m-AR0"/>
+                                    <constraint firstAttribute="width" constant="320" placeholder="YES" id="RKR-1r-kki"/>
+                                    <constraint firstAttribute="height" constant="260" placeholder="YES" id="mQv-o6-J0W"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhn-Cb-Wsx" customClass="MCTColorPickerBarView">
@@ -29,10 +30,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="4Ul-kD-VPK"/>
+                                    <constraint firstAttribute="width" constant="320" placeholder="YES" id="Bo8-4P-KeT"/>
+                                    <constraint firstAttribute="height" constant="60" id="wOo-kz-Vrz"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zd-Be-hVx">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Zd-Be-hVx">
                                 <rect key="frame" x="0.0" y="371" width="320" height="197"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,16 +42,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dhn-Cb-Wsx" secondAttribute="trailing" id="AgD-iO-lHv"/>
-                            <constraint firstItem="dhn-Cb-Wsx" firstAttribute="top" secondItem="Tf5-S0-v1L" secondAttribute="bottom" constant="14" id="HNC-PS-Rvh"/>
-                            <constraint firstAttribute="trailing" secondItem="8Zd-Be-hVx" secondAttribute="trailing" id="MwH-cL-H87"/>
-                            <constraint firstItem="dhn-Cb-Wsx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Ox7-x1-8b5"/>
-                            <constraint firstItem="Tf5-S0-v1L" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="RK0-Rn-Gja"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8Zd-Be-hVx" secondAttribute="bottom" id="Rjr-Lr-hoo"/>
-                            <constraint firstItem="Tf5-S0-v1L" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="gDo-JZ-1Eg"/>
-                            <constraint firstAttribute="trailing" secondItem="Tf5-S0-v1L" secondAttribute="trailing" id="gRm-qi-eaZ"/>
-                            <constraint firstItem="8Zd-Be-hVx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ju7-Ub-r0t"/>
-                            <constraint firstItem="8Zd-Be-hVx" firstAttribute="top" secondItem="dhn-Cb-Wsx" secondAttribute="bottom" constant="17" id="zdm-Iu-mfd"/>
+                            <constraint firstItem="dhn-Cb-Wsx" firstAttribute="top" secondItem="Tf5-S0-v1L" secondAttribute="bottom" constant="14" id="18i-HV-IUc"/>
+                            <constraint firstItem="Tf5-S0-v1L" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="4rR-js-22O"/>
+                            <constraint firstAttribute="centerX" secondItem="Tf5-S0-v1L" secondAttribute="centerX" id="bXO-H1-ada"/>
+                            <constraint firstAttribute="centerX" secondItem="dhn-Cb-Wsx" secondAttribute="centerX" id="pKX-nE-vpr"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>

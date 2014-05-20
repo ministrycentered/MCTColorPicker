@@ -87,6 +87,10 @@
     }
 }
 
+- (CGSize)intrinsicContentSize {
+    return CGSizeMake(255.0, UIViewNoIntrinsicMetric);
+}
+
 #pragma mark -
 #pragma mark - Layout
 - (void)layoutSubviews {

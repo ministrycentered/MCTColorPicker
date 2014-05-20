@@ -80,6 +80,10 @@ static void *MCTColorPickerViewColorChangeContext = &MCTColorPickerViewColorChan
     [self.pickerLayer removeObserver:self forKeyPath:NSStringFromSelector(@selector(color)) context:MCTColorPickerViewColorChangeContext];
 }
 
+- (CGSize)intrinsicContentSize {
+    return CGSizeMake(255.0, 255.0);
+}
+
 #pragma mark -
 #pragma mark - Color
 - (void)setColor:(UIColor *)color {
