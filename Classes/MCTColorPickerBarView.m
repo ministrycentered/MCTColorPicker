@@ -65,6 +65,9 @@
 + (Class)layerClass {
     return [MCTColorPickerBarLayer class];
 }
+- (CGSize)intrinsicContentSize {
+    return CGSizeMake(255.0, UIViewNoIntrinsicMetric);
+}
 
 - (MCTColorPickerBarLayer *)barLayer {
     if ([self.layer isKindOfClass:[MCTColorPickerBarLayer class]]) {
@@ -86,10 +89,6 @@
         [self addSubview:_pointView];
         [_pointView moveToPoint:self.selectedPoint];
     }
-}
-
-- (CGSize)intrinsicContentSize {
-    return CGSizeMake(255.0, UIViewNoIntrinsicMetric);
 }
 
 #pragma mark -

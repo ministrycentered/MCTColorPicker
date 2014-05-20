@@ -49,7 +49,7 @@
     // Blue
     rgb = (MCTRGB){0.0,0.0,1.0};
     color = MCTHSVFromMCTRGB(rgb);
-    XCTAssertEqualWithAccuracy(color.h, .666666667, _acc, @"Expected hue to be ..666666667 got %f",color.h);
+    XCTAssertEqualWithAccuracy(color.h, .666666667, _acc, @"Expected hue to be .666666667 got %f",color.h);
     XCTAssertEqualWithAccuracy(color.s, 1.0, _acc, @"Expected sat to be 1.0 got %f",color.s);
     XCTAssertEqualWithAccuracy(color.v, 1.0, _acc, @"Expected val to be 1.0 got %f",color.v);
 }

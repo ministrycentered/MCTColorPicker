@@ -253,3 +253,25 @@ CGColorRef MCTCreateColorFromRGB(MCTRGB rgb) {
     CGColorRef color = CGColorCreate(colorSpace, components);
     return color;
 }
+
+MCTRGB MCTCreateRGBFromColor(CGColorRef color) {
+    CGColorRetain(color);
+    
+    MCTRGB rgb;
+    
+    size_t count = CGColorGetNumberOfComponents(color);
+    
+    if (count == 4) {
+        const CGFloat *comp = CGColorGetComponents(color);
+        rgb.r = comp[0];
+        rgb.g = comp[1];
+        rgb.b = comp[2];
+    }
+    
+    
+    CGColorRelease(color);
+    return rgb;
+}
+MCTHSV MCTCreateHSVFromColor(CGColorRef color) {
+    return MCTHSVFromMCTRGB(MCTCreateRGBFromColor(color));
+}

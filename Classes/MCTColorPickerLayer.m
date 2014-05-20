@@ -38,16 +38,7 @@
     
     CGColorRetain(_color);
     
-    size_t compCount = CGColorGetNumberOfComponents(_color);
-    
-    if (compCount == 4) {
-        const CGFloat *comp = CGColorGetComponents(_color);
-        MCTRGB rgb;
-        rgb.r = comp[0];
-        rgb.g = comp[1];
-        rgb.b = comp[2];
-        self.hsv = MCTHSVFromMCTRGB(rgb);
-    }
+    self.hsv = MCTCreateHSVFromColor(_color);
     
     [self didChangeValueForKey:@"color"];
     

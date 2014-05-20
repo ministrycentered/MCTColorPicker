@@ -47,6 +47,9 @@ FOUNDATION_EXPORT UInt8 MCTBlendValue(UInt8 value, UInt8 percent);
 FOUNDATION_EXPORT CGColorRef MCTCreateColorForHSV(MCTHSV hsv);
 FOUNDATION_EXPORT CGColorRef MCTCreateColorFromRGB(MCTRGB rgb);
 
+FOUNDATION_EXPORT MCTRGB MCTCreateRGBFromColor(CGColorRef color);
+FOUNDATION_EXPORT MCTHSV MCTCreateHSVFromColor(CGColorRef color);
+
 @protocol MCTColorPickerPointView <NSObject>
 
 - (void)moveToPoint:(CGPoint)point;
