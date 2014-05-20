@@ -38,7 +38,11 @@
     
     CGColorRetain(_color);
     
-    self.hsv = MCTCreateHSVFromColor(_color);
+    MCTHSV hsv = MCTCreateHSVFromColor(_color);
+    hsv.s = 1.0;
+    hsv.v = 1.0;
+    self.hsv = hsv;
+    
     
     [self didChangeValueForKey:@"color"];
     

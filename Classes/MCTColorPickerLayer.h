@@ -27,12 +27,30 @@
 
 #import "MCTColorPickerHelpers.h"
 
+/**
+ *  Layer for displaying the saturation/value picker
+ */
 @interface MCTColorPickerLayer : CALayer
 
+/**
+ *  The HSV for the current color.
+ *
+ *  Saturation and Value will always be 1.0
+ */
 @property (nonatomic, readonly) MCTHSV hsv;
 
+/**
+ *  The CGColor that is currently being displayed
+ */
 @property (nonatomic) CGColorRef color;
 
+/**
+ *  Return the HSV value for the passed point
+ *
+ *  @param point The point for the HSV in the layers coordinate space
+ *
+ *  @return The HSV
+ */
 - (MCTHSV)hsvForPoint:(CGPoint)point;
 
 @end
