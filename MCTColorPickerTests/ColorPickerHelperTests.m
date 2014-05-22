@@ -116,4 +116,14 @@
     XCTAssertEqualWithAccuracy(rgb.b, 1.0, _acc, @"Expected blu to be 1.0 got %f",rgb.b);
 }
 
+extern uint64_t dispatch_benchmark(size_t count, void (^block)(void));
+- (void)testImageGenerationBenchmark {
+    uint64_t nsavg = dispatch_benchmark(1000, ^{
+        CGImageRef img = MCTColorPickerCreateHSLMapImage(0.0);
+        CFRelease(img);
+    });
+    
+    NSLog(@"****************** %.04fms",(float_t)nsavg / 1000000.0);
+}
+
 @end

@@ -29,6 +29,7 @@
 #define MCT_RGB_MAX_I 255
 #define MCT_RGB_MAX_F 255.0
 #define MCT_BYTE_MULTI 4
+#define MCT_BYTE_COMP 8
 
 CGImageRef MCTColorPickerCreateHSLMapImage(CGFloat hue) {
     CGSize size = CGSizeMake(MCT_RGB_MAX_F, MCT_RGB_MAX_F);
@@ -41,7 +42,7 @@ CGImageRef MCTColorPickerCreateHSLMapImage(CGFloat hue) {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipFirst;
     
-    CGContextRef context = CGBitmapContextCreate(data, size.width, size.height, 8, size.width * MCT_BYTE_MULTI, colorSpace, bitmapInfo);
+    CGContextRef context = CGBitmapContextCreate(data, size.width, size.height, MCT_BYTE_COMP, size.width * MCT_BYTE_MULTI, colorSpace, bitmapInfo);
     
     CGColorSpaceRelease(colorSpace);
     
@@ -52,7 +53,7 @@ CGImageRef MCTColorPickerCreateHSLMapImage(CGFloat hue) {
     
     UInt8 *dataPointer = data;
     
-    register size_t bytesPerRow = CGBitmapContextGetBytesPerRow(context);
+    size_t bytesPerRow = CGBitmapContextGetBytesPerRow(context);
     
     CGFloat r, g, b;
     MCTColorPickerHueComponentFactors(hue, &r, &g, &b);
@@ -61,20 +62,20 @@ CGImageRef MCTColorPickerCreateHSLMapImage(CGFloat hue) {
     UInt8 greenPercent = (UInt8)((1.0 - g) * MCT_RGB_MAX_F);
     UInt8 bluePercent  = (UInt8)((1.0 - b) * MCT_RGB_MAX_F);
     
-    register uint32_t height = (uint32_t)size.height;
-    register uint32_t width = (uint32_t)size.width;
+    uint32_t height = (uint32_t)size.height;
+    uint32_t width = (uint32_t)size.width;
     
     for (int32_t idx = 0; idx <= width; ++idx) {
-        register UInt8 *ptr = dataPointer;
+        UInt8 *ptr = dataPointer;
         
-        register uint32_t red   = width - MCTBlendValue(idx, redPercent);
-        register uint32_t green = width - MCTBlendValue(idx, greenPercent);
-        register uint32_t blue  = width - MCTBlendValue(idx, bluePercent);
+        uint32_t red   = width - MCTBlendValue(idx, redPercent);
+        uint32_t green = width - MCTBlendValue(idx, greenPercent);
+        uint32_t blue  = width - MCTBlendValue(idx, bluePercent);
         
-        for (register int32_t val = height; val >= 0; --val) {
-            ptr[0] = (UInt8) (val * blue >> 8);
-            ptr[1] = (UInt8) (val * green >> 8);
-            ptr[2] = (UInt8) (val * red >> 8);
+        for (int32_t val = height; val >= 0; --val) {
+            ptr[0] = (UInt8) (val * blue >> MCT_BYTE_COMP);
+            ptr[1] = (UInt8) (val * green >> MCT_BYTE_COMP);
+            ptr[2] = (UInt8) (val * red >> MCT_BYTE_COMP);
             
             ptr += bytesPerRow;
         }
@@ -98,7 +99,7 @@ CGImageRef MCTColorPickerCreateBarImage(MCTHSVIDX hsvIndex, MCTHSV hsv) {
 	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipFirst;
     
-    CGContextRef context = CGBitmapContextCreate(data, size, 1.0, 8, size * MCT_BYTE_MULTI, colorSpace, bitmapInfo);
+    CGContextRef context = CGBitmapContextCreate(data, size, 1.0, MCT_BYTE_COMP, size * MCT_BYTE_MULTI, colorSpace, bitmapInfo);
     
     CGColorSpaceRelease(colorSpace);
     
