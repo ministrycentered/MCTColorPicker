@@ -32,22 +32,66 @@
 typedef void (^MCTColorPickerChangeHandler)(MCTColorPickerView *, UIColor *color);
 typedef void (^MCTColorPickerInteractionChangeHandler)(MCTColorPickerView *, BOOL isInteracting);
 
+/**
+ *  A UIView that displays a color picker, and responds to user input for picking that color.
+ */
 @interface MCTColorPickerView : UIView
 
+/**
+ *  The color to display.
+ */
 @property (nonatomic, strong) UIColor *color;
 
+/**
+ *  The picker display layer
+ */
 @property (nonatomic, strong, readonly) MCTColorPickerLayer *pickerLayer;
 
+/**
+ *  The currently selected color
+ */
 @property (nonatomic, strong, readonly) UIColor *selectedColor;
+
+/**
+ *  When ever the selected color is changed this block is called if it was set.
+ *
+ *  There are multiple ways this is called. If you don't want it called when making programatic changes or setup use performSetup:
+ *
+ *  @see performSetup:
+ */
 @property (nonatomic, copy) MCTColorPickerChangeHandler changeHandler;
 
-- (void)updateColors;
+/**
+ *  Updates the current color
+ *
+ *  @param notifyChangeHandler Don't call the change handler
+ */
+- (void)updateColorsNotifyChangeHandler:(BOOL)notifyChangeHandler;
 
+/**
+ *  Setting this will add it as a subview and call MCTColorPickerPointView's moveToPoint: method on user input
+ */
 @property (nonatomic, strong) UIView<MCTColorPickerPointView> *pointView;
 
+/**
+ *  Called when user interaction begins and ends.
+ */
 @property (nonatomic, copy) MCTColorPickerInteractionChangeHandler inputChangeHandler;
 
+/**
+ *  Set the HSV satuation and value levels
+ *
+ *  @param saturation The color saturation
+ *  @param value      The color value
+ */
 - (void)selectSaturation:(CGFloat)saturation value:(CGFloat)value;
+
+/**
+ *  Perform the block without calling the change handlers
+ *
+ *  @param setup The block to call
+ */
+- (void)performSetup:(void(^)(MCTColorPickerView *view))setup;
 
 @end
 

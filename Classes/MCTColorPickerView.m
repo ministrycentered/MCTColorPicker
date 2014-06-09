@@ -32,6 +32,8 @@ static CGFloat const MCTSelectedPointDefault = -MAXFLOAT;
 @property (nonatomic, strong, readwrite) UIColor *selectedColor;
 @property (nonatomic) CGPoint selectedPoint;
 
+@property (nonatomic, getter = isSettingUp) BOOL settingUp;
+
 @end
 
 @implementation MCTColorPickerView
@@ -59,15 +61,17 @@ static CGFloat const MCTSelectedPointDefault = -MAXFLOAT;
     return self;
 }
 - (void)mct_setupView {
-    [self.pickerLayer addObserver:self forKeyPath:NSStringFromSelector(@selector(color)) options:0 context:MCTColorPickerViewColorChangeContext];
-    
-    self.color = [UIColor redColor];
-    
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(mct_gestureRecognizerDidRecognize:)];
-    longPress.minimumPressDuration = 0.01;
-    [self addGestureRecognizer:longPress];
-    
-    self.selectedPoint = CGPointMake(MCTSelectedPointDefault, MCTSelectedPointDefault);
+    [self performSetup:^(MCTColorPickerView *view) {
+        [view.pickerLayer addObserver:view forKeyPath:NSStringFromSelector(@selector(color)) options:0 context:MCTColorPickerViewColorChangeContext];
+        
+        view.color = [UIColor redColor];
+        
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(mct_gestureRecognizerDidRecognize:)];
+        longPress.minimumPressDuration = 0.01;
+        [view addGestureRecognizer:longPress];
+        
+        view.selectedPoint = CGPointMake(MCTSelectedPointDefault, MCTSelectedPointDefault);
+    }];
 }
 
 + (Class)layerClass {
@@ -97,11 +101,21 @@ static CGFloat const MCTSelectedPointDefault = -MAXFLOAT;
     return [UIColor colorWithCGColor:self.pickerLayer.color];
 }
 
+- (void)performSetup:(void(^)(MCTColorPickerView *view))setup {
+    self.settingUp = YES;
+    typeof(self) __weak welf = self;
+    setup(welf);
+    self.settingUp = NO;
+}
+
 #pragma mark -
 #pragma mark - Setters
 - (void)setSelectedColor:(UIColor *)selectedColor {
+    [self setSelectedColor:selectedColor callChangeHandler:![self isSettingUp]];
+}
+- (void)setSelectedColor:(UIColor *)selectedColor callChangeHandler:(BOOL)callChangeHandler {
     _selectedColor = selectedColor;
-    if (self.changeHandler) {
+    if (callChangeHandler && self.changeHandler) {
         typeof(self) __weak welf = self;
         self.changeHandler(welf, selectedColor);
     }
@@ -173,13 +187,13 @@ static CGFloat const MCTSelectedPointDefault = -MAXFLOAT;
 #pragma mark -
 #pragma mark - Update
 - (void)mct_updateFromPoint {
-    [self updateColors];
+    [self updateColorsNotifyChangeHandler:![self isSettingUp]];
 }
 
-- (void)updateColors {
+- (void)updateColorsNotifyChangeHandler:(BOOL)notifyChangeHandler {
     CGColorRef color = MCTCreateColorForHSV([self.pickerLayer hsvForPoint:self.selectedPoint]);
     if (color) {
-        self.selectedColor = [UIColor colorWithCGColor:color];
+        [self setSelectedColor:[UIColor colorWithCGColor:color] callChangeHandler:notifyChangeHandler];
         CGColorRelease(color);
     }
 }
