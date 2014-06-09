@@ -73,8 +73,22 @@
 #pragma mark -
 #pragma mark - Helper
 - (MCTHSV)hsvForPoint:(CGPoint)point {
-    CGFloat sPer = (point.x / CGRectGetWidth(self.bounds));
-    CGFloat vPer = 1.0 - (point.y / CGRectGetHeight(self.bounds));
+    CGFloat sPer = ({
+        CGFloat val = 0.0;
+        CGFloat width = CGRectGetWidth(self.bounds);
+        if (width > 0.0) {
+            val = (point.x / width);
+        }
+        val;
+    });
+    CGFloat vPer = 1.0 - ({
+        CGFloat val = 0.0;
+        CGFloat height = CGRectGetHeight(self.bounds);
+        if (height > 0.0) {
+            val = (point.y / height);
+        }
+        val;
+    });
     
     MCTHSV hsv;
     hsv.h = self.hsv.h;
