@@ -65,14 +65,14 @@ CGImageRef MCTColorPickerCreateHSLMapImage(CGFloat hue) {
     uint32_t height = (uint32_t)size.height;
     uint32_t width = (uint32_t)size.width;
     
-    for (int32_t idx = 0; idx <= width; ++idx) {
+    for (int32_t idx = 1; idx <= width; idx++) {
         UInt8 *ptr = dataPointer;
         
         uint32_t red   = width - MCTBlendValue(idx, redPercent);
         uint32_t green = width - MCTBlendValue(idx, greenPercent);
         uint32_t blue  = width - MCTBlendValue(idx, bluePercent);
         
-        for (int32_t val = height; val >= 0; --val) {
+        for (int32_t val = height; val >= 0; val--) {
             ptr[0] = (UInt8) (val * blue >> MCT_BYTE_COMP);
             ptr[1] = (UInt8) (val * green >> MCT_BYTE_COMP);
             ptr[2] = (UInt8) (val * red >> MCT_BYTE_COMP);
