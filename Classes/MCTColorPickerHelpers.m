@@ -256,6 +256,9 @@ CGColorRef MCTCreateColorFromRGB(MCTRGB rgb) {
     components[3] = 1.0;
     
     CGColorRef color = CGColorCreate(colorSpace, components);
+    
+    CFRelease(colorSpace);
+    
     return color;
 }
 

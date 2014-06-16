@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MCTColorPicker"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "A simple HSV color picker for iOS"
   s.homepage     = "https://github.com/ministrycentered/MCTColorPicker"
   s.license      = "MIT"
