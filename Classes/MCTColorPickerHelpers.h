@@ -35,20 +35,20 @@ typedef NS_ENUM(uint32_t, MCTHSVIDX) {
 };
 
 FOUNDATION_EXTERN CGImageRef MCTColorPickerCreateHSLMapImage(CGFloat hue);
-FOUNDATION_EXPORT CGImageRef MCTColorPickerCreateBarImage(MCTHSVIDX hsvIndex, MCTHSV hsv);
+FOUNDATION_EXTERN CGImageRef MCTColorPickerCreateBarImage(MCTHSVIDX hsvIndex, MCTHSV hsv);
 
 FOUNDATION_EXTERN void MCTColorPickerHueComponentFactors(CGFloat hue, CGFloat *red, CGFloat *green, CGFloat *blue);
 
 FOUNDATION_EXTERN MCTRGB MCTRGBFromMCTHSV(MCTHSV hsv);
 FOUNDATION_EXTERN MCTHSV MCTHSVFromMCTRGB(MCTRGB rgb);
 
-FOUNDATION_EXPORT UInt8 MCTBlendValue(UInt8 value, UInt8 percent);
+FOUNDATION_EXTERN UInt8 MCTBlendValue(UInt8 value, UInt8 percent);
 
-FOUNDATION_EXPORT CGColorRef MCTCreateColorForHSV(MCTHSV hsv);
-FOUNDATION_EXPORT CGColorRef MCTCreateColorFromRGB(MCTRGB rgb);
+FOUNDATION_EXTERN CGColorRef MCTCreateColorForHSV(MCTHSV hsv);
+FOUNDATION_EXTERN CGColorRef MCTCreateColorFromRGB(MCTRGB rgb);
 
-FOUNDATION_EXPORT MCTRGB MCTCreateRGBFromColor(CGColorRef color);
-FOUNDATION_EXPORT MCTHSV MCTCreateHSVFromColor(CGColorRef color);
+FOUNDATION_EXTERN MCTRGB MCTCreateRGBFromColor(CGColorRef color);
+FOUNDATION_EXTERN MCTHSV MCTCreateHSVFromColor(CGColorRef color);
 
 @protocol MCTColorPickerPointView <NSObject>
 
